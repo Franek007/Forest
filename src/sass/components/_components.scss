@@ -1,0 +1,102 @@
+@use 'utilities/colors' as *;
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section-padding {
+	padding: 3.2em 2em;
+}
+
+.section-heading {
+	position: relative;
+	margin-bottom: 1em;
+	font-size: 4.2rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center;
+	color: $black;
+	letter-spacing: 2px;
+}
+
+.btn-special-animation {
+	position: relative;
+	transition: background-color 0.3s;
+	overflow: hidden;
+	z-index: 0;
+
+	&::before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.3s;
+		z-index: -1;
+	}
+
+	&:hover::before {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+}
+
+@mixin buttons {
+	&-btn {
+		padding: 1em 0.5em;
+		margin-right: 1em;
+		background: transparent;
+		border: 1px solid transparent;
+		cursor: pointer;
+	}
+
+	i,
+	&-btn i {
+		font-size: 3rem;
+	}
+}
+
+@mixin heroImg($bgImg) {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 30vh;
+	color: $main-color;
+	background-image: url($bgImg);
+	background-size: cover;
+	background-position: center;
+	z-index: 0;
+}
+
+@mixin heroShadow {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -5;
+}
+
+@mixin offerBtn {
+	margin-top: 2em;
+	padding: 1em 2em;
+	width: 75%;
+	font-size: 1.6rem;
+	font-family: 'Raleway', sans-serif;
+	border: 1px solid transparent;
+	box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+	cursor: pointer;
+
+	&::before {
+		background-color: $light-gray;
+	}
+}

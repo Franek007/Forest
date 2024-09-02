@@ -1,0 +1,65 @@
+@use 'utilities/colors' as *;
+
+.footer {
+	background-color: $light-white;
+
+	&__boxes {
+		display: flex;
+		justify-content: center;
+	}
+
+	.wrapper {
+		padding: 3em 0 3em 0;
+	}
+
+	&__box {
+		margin: 0 1.5em;
+		font-size: 1.4rem;
+
+		i {
+			margin-right: 0.3em;
+			color: $gray;
+		}
+
+		&-icons {
+			padding: 1em;
+			text-align: center;
+			
+			i {
+				text-align: center;
+				font-size: 3.2rem;
+				color: $black;
+			}
+		}
+
+		&-title {
+			margin-bottom: 1em;
+			font-size: 2.2rem;
+		}
+
+		&-desktop {
+			display: none;
+		}
+	}
+
+	&__title {
+		font-size: 4.2rem;
+		font-weight: normal;
+		text-align: center;
+	}
+
+	&__items {
+		list-style: none;
+	}
+	
+	&__item {
+		color: $black;
+		line-height: 2;
+		text-decoration: none;
+	}
+
+	&__bottom-text {
+		padding: 1em;
+		text-align: center;
+	}
+}

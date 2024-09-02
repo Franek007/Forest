@@ -1,0 +1,316 @@
+@use 'utilities/colors' as *;
+@use 'components/components' as *;
+@use 'components/nav';
+@use 'components/media';
+@use 'components/footer';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	height: 100vh;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.6rem;
+}
+
+.header {
+	position: relative;
+	margin-top: 6.2em;
+	height: 50vh;
+	width: 100%;
+	color: $main-color;
+	@include heroImg('../../dist/img/jungle-small.jpg');
+	background-position: bottom;
+	background-repeat: no-repeat;
+	z-index: 0;
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		margin-left: 2em;
+		height: 100%;
+
+		&-text {
+			margin-bottom: 0.2em;
+			font-size: 1.8rem;
+			letter-spacing: 0.2px;
+		}
+	}
+
+	&__shadow {
+		@include heroShadow;
+		background: rgba(0, 0, 0, 0.59);
+	}
+}
+
+.about-us {
+	&__box {
+		display: flex;
+		flex-direction: column;
+
+		&-img {
+			margin-bottom: 1em;
+			width: 100%;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0.5em;
+		font-size: 3.2rem;
+	}
+
+	&__text {
+		line-height: 1.8;
+	}
+}
+
+.hero-img {
+	@include heroImg('../../dist/img/girl-small.jpg');
+	background-attachment: fixed;
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1em;
+		width: 80%;
+		text-align: center;
+		border: 1px solid #fff;
+	}
+
+	&__title {
+		font-weight: normal;
+		font-size: 3.2rem;
+	}
+
+	&__shadow {
+		@include heroShadow;
+		background: rgba(5, 22, 7, 0.59);
+	}
+}
+
+.offer {
+	.section-heading {
+		margin-bottom: 0.5em;
+	}
+
+	&__text {
+		margin-bottom: 1em;
+		font-size: 2.2rem;
+		text-align: center;
+	}
+
+	&__boxes {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	&__box {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 2em;
+		margin: 1em;
+		width: 80%;
+		border-radius: 8px;
+		box-shadow: 0px 4px 4px #00000030, 0px 12px 12px #00000015;
+		transition: scale .3s;
+
+		&-title {
+			font-size: 2.2rem;
+		}
+
+		&-text {
+			margin: 0.5em 0;
+			font-size: 3.4rem;
+			font-weight: bold;
+			text-align: center;
+
+			&::first-letter {
+				font-size: 3.6rem;
+			}
+		}
+
+		&:hover {
+			scale: 1.01;
+		}
+	}
+
+	&__items {
+		font-size: 1.8rem;
+		line-height: 1.5;
+		list-style: none;
+	}
+
+	&__btn {
+		@include offerBtn;
+
+		&--green {
+			@include offerBtn;
+			background-color: $light-green;
+			box-shadow: 2px 4px 6px rgba(42, 222, 114, 0.9);
+
+			&::before {
+				background-color: $light-green-hover;
+			}
+		}
+	}
+
+	&__seeMore {
+		display: block;
+		padding: 1em;
+		font-size: 1.8rem;
+		text-align: right;
+		text-shadow: 0 0 16px #ffe537;
+
+		i {
+			margin-right: 0.5em;
+		}
+
+		a {
+			padding: 0.5em;
+			text-decoration: none;
+		}
+	}
+}
+
+.contact {
+	margin-top: 6.2em;
+
+	&__map{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 2em;
+		padding: 1em;
+	}
+
+	&__title {
+		margin: 1em;
+		font-size: 2.4rem;
+		text-align: center;
+	}
+
+	&__form {
+		margin: 2em auto;
+		padding: 2em;
+		max-width: 500px;
+		border-radius: 8px;
+
+		&-box {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			font-size: 1.8rem;
+
+			&-label,
+			&-label1,
+			&-label2 {
+				margin-bottom: 0.5em;
+				color: $gray;
+			}
+
+			&-textarea {
+				margin-bottom: 0.5em;
+				max-width: 100%;
+				min-width: 100%;
+				min-height: 100px;
+				padding: 0.5em;
+				color: #202124;
+				border: 1px solid $light-gray;
+				background-color: #f1f3f4;
+				transition: background-color 0.2s ease, border-color 0.2s ease;
+			}
+		}
+
+		input[type='text'] {
+			padding: 0.5em;
+			margin-bottom: 0.8em;
+			width: 100%;
+			border-radius: 4px;
+			border: 1px solid $light-gray;
+			background-color: #f1f3f4;
+			transition: background-color 0.2s ease, border-color 0.2s ease;
+		}
+
+		input[type='text']:focus,
+		.contact__form-box-textarea:focus {
+			background-color: #fff;
+			border-color: $light-green;
+			box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+			outline: none;
+		}
+
+		&-btn {
+			margin-top: 1em;
+			padding: 1em 2em;
+			width: 100%;
+			text-align: center;
+			background-color: $light-green;
+			color: #fff;
+			font-size: 1.6rem;
+			letter-spacing: 2px;
+			border-radius: 4px;
+			transition: background-color 0.3s ease;
+			box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+			border: none;
+			cursor: pointer;
+		}
+
+		.contact__form-btn:hover {
+			background-color: $light-green-hover;
+		}
+	}
+}
+
+.subpage__hero-img {
+	@include heroImg('../../dist/img/subpage__hero-img-small.jpg');
+
+	&-title {
+		color: $main-color;
+	}
+
+	&-text {
+		text-align: center;
+	}
+
+	&-link {
+		color: $light-green;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	.section-heading {
+		margin-bottom: 0.5em;
+	}
+}
+
+.shadow-bg {
+	background-color: rgba(228, 225, 225, 0.8);
+}
+
+.active-section {
+	color: $main-color;
+	background-color: $black;
+}
+
+.active-section-mobile {
+	font-weight: bold;
+	border-left: 2px solid black;
+}
+
+@import 'components/media';

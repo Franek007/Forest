@@ -1,0 +1,187 @@
+@media (min-width: 576px) {
+	.hero-img {
+		&__box {
+			padding: 2em;
+		}
+	}
+
+	.offer {
+		&__box {
+			width: 60%;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.nav {
+		&__item {
+			font-size: 3.8rem;
+
+			i {
+				font-size: 3.4rem;
+			}
+
+			&-btn {
+				margin-right: 4em;
+				i {
+					font-size: 3.8rem;
+				}
+			}
+		}
+	}
+
+	.hero-img {
+		background-image: url('../../../dist/img/girl-big.jpg');
+
+		&__box {
+			width: 75%;
+			max-width: 1200px;
+		}
+	}
+
+	.offer {
+		&__boxes {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		&__box {
+			width: 40%;
+		}
+	}
+
+	.subpage__hero-img {
+		margin-top: 7.6em;
+		background-image: url('../../dist/img/subpage__hero-img-big.jpg');
+
+		&-title {
+			font-size: 6.2rem;
+		}
+
+		&-text {
+			font-size: 2.2rem;
+		}
+
+		.section-heading {
+			margin-bottom: 0.25em;
+		}
+	}
+
+	.contact {
+		&__form {
+			box-shadow: 1px 4px 4px #00000030, 0px 12px 12px #00000015;
+		}
+
+		&__map {
+			&-map {
+				width: 100%;
+				height: 500px;
+				max-width: 1200px;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav-mobile {
+		display: none;
+	}
+
+	.nav-desktop {
+		display: block;
+	}
+
+	.nav {
+		&__desktop-item:first-child {
+			padding-left: 0;
+		}
+
+		&__desktop-items {
+			padding-left: 0;
+		}
+	}
+
+	.header {
+		background-image: url('../../dist/img/jungle-big.jpg');
+
+		&__box {
+			&-title {
+				font-size: 4.2rem;
+			}
+
+			&-text {
+				font-size: 2.2rem;
+			}
+		}
+	}
+
+	.about-us {
+		&__box {
+			flex-direction: row;
+
+			&-img {
+				margin-right: 3.5em;
+				width: 100%;
+				max-width: 500px;
+			}
+		}
+
+		&-text {
+			width: 80%;
+			font-size: 2rem;
+		}
+
+		&__title {
+			font-size: 3rem;
+		}
+	}
+
+	.hero-img {
+		&__title {
+			font-size: 4.2rem;
+		}
+	}
+
+	.offer {
+		&__box {
+			width: 30%;
+		}
+	}
+
+	.footer {
+		&__boxes {
+			margin: 0 8em;
+		}
+
+		&__box {
+			&:first-child {
+				margin-right: auto;
+			}
+
+			&-desktop {
+				display: block;
+			}
+
+			&-icons {
+				display: none;
+			}
+
+			&-title {
+				font-size: 2.6rem;
+			}
+		}
+
+		&__item {
+			font-size: 1.8rem;
+		}
+
+		&__title {
+			font-size: 6.2rem;
+		}
+	}
+
+	.subpage__hero-img {
+		margin-top: 6.2em;
+	}
+}
