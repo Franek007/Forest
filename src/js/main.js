@@ -145,10 +145,4 @@ const currentSection = () => {
 	})
 }
 
-const contactNavSectionPage = () => {
-	const contact = document.querySelector('.contact-desktop')
-	document.querySelector('.active-section').classList.remove('active-section')
-	contact.classList.add('active-section')
-}
-
 document.addEventListener('DOMContentLoaded', main)
