@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Forest | oferta</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+<link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+<link rel="shortcut icon" href="../favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="MyWebSite" />
+<link rel="manifest" href="../favicon/site.webmanifest" />
 <script src="https://kit.fontawesome.com/c8836c9201.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./dist/css/style.min.css">
 </head>
@@ -22,10 +28,10 @@
 
     <div class="nav__sidebar">
         <div class="nav__sidebar-items">
-            <a href="../index.html#" class="nav__sidebar-item active-section-mobile">Home</a>
+            <a href="../index.html#home" class="nav__sidebar-item active-section-mobile">Home</a>
             <a href="../index.html#about-us" class="nav__sidebar-item">O nas</a>
             <a href="../index.html#offer" class="nav__sidebar-item">Oferta</a>
-            <a href="../contact.html" class="nav__sidebar-item">Kontakt</a>
+            <a href="../contact.html" class="nav__sidebar-item special-item">Kontakt</a>
         </div>
     </div>
 </nav>
@@ -37,20 +43,109 @@
             <a href="../index.html#home" class="nav__desktop-item desktop-item active-section">Home</a>
             <a href="../index.html#about-us" class="nav__desktop-item desktop-item">O nas</a>
             <a href="../index.html#offer" class="nav__desktop-item desktop-item">Oferta</a>
-            <a href="../contact.html" class="nav__desktop-item desktop-item">Kontakt</a>
+            <a href="../contact.html" class="nav__desktop-item desktop-item contact-desktop"
+                onclick="contactNavSectionPage()">Kontakt</a>
         </div>
     </div>
 </nav>
-    <section class="offer section">
-        <div class="subpage__hero-img">
-            <div class="subpage__hero-img-box">
-                <h2 class="subpage__hero-img-title section-heading">Kontakt</h2>
-                <p class="subpage__hero-img-text"><a href="../index.html#" class="subpage__hero-img-link">Strona
-                        głowna</a> > Kontakt</p>
+
+    <main>
+        <section class="offer-page section" id="offer-page">
+            <div class="subpage__hero-img">
+                <div class="subpage__hero-img-box">
+                    <h2 class="subpage__hero-img-title section-heading">Oferta</h2>
+                    <p class="subpage__hero-img-text"><a href="../index.html#" class="subpage__hero-img-link">Strona
+                            głowna</a> > Oferta</p>
+                </div>
+                <div class="hero-img__shadow"></div>
             </div>
-            <div class="hero-img__shadow"></div>
-        </div>
-    </section>
+            <div class="wrapper">
+                <h3 class="contact__title">Poznaj nasze oferty dla przeciębiorców!</h3>
+                <!-- <div class="offer-page__cards">
+                    <div class="offer-page__card">
+                        <div class="offer-page__card"></div>
+
+                        <p>Lorem</p>
+                        <ul>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                        </ul>
+                    </div>
+                    <div class="offer-page__card">
+                        <div class="offer-page__card"></div>
+                        <p>Lorem</p>
+                        <ul>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                        </ul>
+                    </div>
+                    <div class="offer-page__card">
+                        <div class="offer-page__card"></div>
+
+                        <p>Lorem</p>
+                        <ul>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                            <li>1</li>
+                        </ul>
+                    </div>
+                </div> -->
+                <div class="offer-page__container">
+
+                    <table class="offer-page__table">
+                        <tr>
+                            <th class="offer-page__table-headbox">
+                                <p class="offer-page__table-title">Startup</p>
+                                <p>Zamów teraz</p>
+                                <button class="offer-page__button">Kup</button>
+                            </th>
+                            <th class="offer-page__table-headbox">
+                                <p class="offer-page__table-title">Enterprise</p>
+                                <p>Zamów teraz</p>
+                                <button class="offer-page__button">Kup</button>
+                            </th>
+                            <th class="offer-page__table-headbox">
+                                <p class="offer-page__table-title">Developer</p>
+                                <p>Zamów teraz</p>
+                                <button class="offer-page__button">Kup</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="offer-page__table-space"></td>
+                            <td class="offer-page__table-space">Sprawdź ofertę!</td>
+                            <td class="offer-page__table-space"></td>
+                        </tr>
+                        <tr>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-check"></i>Opcja</td>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-check"></i>Opcja</td>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-check"></i>Opcja</td>
+                        </tr>
+                        <tr>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-check"></i>Opcja</td>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-check"></i>Opcja</td>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-check"></i>Opcja</td>
+                        </tr>
+                        <tr>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-minus"></i>Opcja</td>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-check"></i>Opcja</td>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-check"></i>Opcja</td>
+                        </tr>
+                        <tr>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-minus"></i>Opcja</td>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-check"></i>Opcja</td>
+                            <td class="offer-page__table-item"><i class="fa-solid fa-minus"></i>Opcja</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+    </main>
     <footer class="footer">
     <div class="wrapper">
         <div class="footer__boxes">
@@ -92,6 +187,7 @@
 
     <p class="footer__bottom-text"> &copy <span class="footer__year"></span> Forest Group Company Ltd.</p>
 </footer>
+    <script src="./dist/js/main.min.js"></script>
 </body>
 
 </html>

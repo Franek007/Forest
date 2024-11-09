@@ -9,6 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+<link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+<link rel="shortcut icon" href="../favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="MyWebSite" />
+<link rel="manifest" href="../favicon/site.webmanifest" />
 <script src="https://kit.fontawesome.com/c8836c9201.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./dist/css/style.min.css">
 </head>
@@ -22,10 +28,10 @@
 
     <div class="nav__sidebar">
         <div class="nav__sidebar-items">
-            <a href="../index.html#" class="nav__sidebar-item active-section-mobile">Home</a>
+            <a href="../index.html#home" class="nav__sidebar-item active-section-mobile">Home</a>
             <a href="../index.html#about-us" class="nav__sidebar-item">O nas</a>
             <a href="../index.html#offer" class="nav__sidebar-item">Oferta</a>
-            <a href="../contact.html" class="nav__sidebar-item">Kontakt</a>
+            <a href="../contact.html" class="nav__sidebar-item special-item">Kontakt</a>
         </div>
     </div>
 </nav>
@@ -37,12 +43,13 @@
             <a href="../index.html#home" class="nav__desktop-item desktop-item active-section">Home</a>
             <a href="../index.html#about-us" class="nav__desktop-item desktop-item">O nas</a>
             <a href="../index.html#offer" class="nav__desktop-item desktop-item">Oferta</a>
-            <a href="../contact.html" class="nav__desktop-item desktop-item">Kontakt</a>
+            <a href="../contact.html" class="nav__desktop-item desktop-item contact-desktop"
+                onclick="contactNavSectionPage()">Kontakt</a>
         </div>
     </div>
 </nav>
     <main>
-        <section class="section contact">
+        <section class="section contact" id="contact">
             <div class="subpage__hero-img">
                 <div class="subpage__hero-img-box">
                     <h2 class="subpage__hero-img-title section-heading">Kontakt</h2>

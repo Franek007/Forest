@@ -1,3 +1,10 @@
+@media (min-width: 405px) {
+	.offer-page__table-item i {
+		margin-right: 0.4em;
+		margin-bottom: 0;
+	}
+}
+
 @media (min-width: 576px) {
 	.hero-img {
 		&__box {
@@ -8,6 +15,16 @@
 	.offer {
 		&__box {
 			width: 60%;
+		}
+	}
+
+	.offer-page {
+		&__table {
+			width: 80%;
+
+			&-title {
+				font-size: 2.2rem;
+			}
 		}
 	}
 }
@@ -69,15 +86,25 @@
 	}
 
 	.contact {
-		&__form {
-			box-shadow: 1px 4px 4px #00000030, 0px 12px 12px #00000015;
-		}
-
 		&__map {
 			&-map {
 				width: 100%;
 				height: 500px;
 				max-width: 1200px;
+			}
+		}
+	}
+
+	.header {
+		height: 45vh;
+	}
+
+	.offer-page {
+		&__table {
+			width: 80%;
+
+			&-title {
+				font-size: 2.8rem;
 			}
 		}
 	}
@@ -145,6 +172,7 @@
 
 	.offer {
 		&__box {
+			padding: 2em;
 			width: 30%;
 		}
 	}
@@ -168,16 +196,16 @@
 			}
 
 			&-title {
-				font-size: 2.6rem;
+				font-size: 2.2rem;
 			}
 		}
 
 		&__item {
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 		}
 
 		&__title {
-			font-size: 6.2rem;
+			font-size: 5.2rem;
 		}
 	}
 

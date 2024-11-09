@@ -18,8 +18,10 @@ const prepareDOMElements = () => {
 	burgerBtn = document.querySelector('.nav__item-btn')
 	navSidebar = document.querySelector('.nav__sidebar')
 	allNavSidebarItems = document.querySelectorAll('.nav__sidebar-item')
+	navNavSidebarItemParent = document.querySelector('.nav__sidebar-items')
 	closeSidebarBtn = document.querySelector('.nav__sidebar-items-btn')
 	allOfferItems = document.querySelectorAll('.offer__item')
+	allOfferPageTabeleItems = document.querySelectorAll('.offer-page__table-item')
 	footerYear = document.querySelector('.footer__year')
 	nav = document.querySelectorAll('.nav')
 	desktopNavItems = document.querySelectorAll('.desktop-item')
@@ -28,7 +30,7 @@ const prepareDOMElements = () => {
 }
 
 const prepareDOMEvents = () => {
-	burgerBtn.addEventListener('click', handleNav);
+	burgerBtn.addEventListener('click', handleNav)
 	window.addEventListener('scroll', addNavShadow)
 	window.addEventListener('scroll', currentSection)
 	handleOfferItemcolor()
@@ -37,7 +39,8 @@ const prepareDOMEvents = () => {
 
 const handleNav = () => {
 	navSidebar.classList.toggle('nav__sidebar--active')
-	burgerBtn.style.zIndex = '1000';
+	navNavSidebarItemParent.classList.toggle('nav__sidebar-items-active')
+	burgerBtn.style.zIndex = '1000'
 
 	allNavSidebarItems.forEach(item => {
 		item.addEventListener('click', () => {
@@ -82,6 +85,14 @@ const handleOfferItemcolor = () => {
 			el.firstElementChild.style.color = '#2ade72'
 		}
 	})
+
+	allOfferPageTabeleItems.forEach(el => {
+		if (el.querySelector('.fa-minus')) {
+			el.style.color = '#cfcfcf'
+		} else {
+			el.firstElementChild.style.color = '#2ade72'
+		}
+	})
 }
 
 const addNavShadow = () => {
@@ -97,11 +108,25 @@ const addNavShadow = () => {
 }
 
 const currentSection = () => {
-	let currentSection = 'home'
+	let currentSection
 
 	sections.forEach(section => {
-		if (window.scrollY >= section.offsetTop) {
-			currentSection = section.id
+		const widths = [0, 576, 768, 992, 2000]
+
+		if (window.location.pathname.includes('contact')) {
+			currentSection = 'contact'
+		} else if (window.location.pathname.includes('offer')) {
+			currentSection = 'offer'
+		} else if (window.innerWidth >= widths[0] && window.innerWidth <= widths[2]) {
+			if (window.scrollY >= section.offsetTop - section.clientHeight / 3) {
+				currentSection = section.id
+			}
+		} else if (window.innerWidth >= widths[2] && window.innerWidth <= widths[4]) {
+			if (window.scrollY >= section.offsetTop - section.clientHeight / 2) {
+				currentSection = section.id
+			}
+		} else if (window.innerWidth >= widths[4]) {
+			currentSection = 'home'
 		}
 	})
 
@@ -118,6 +143,12 @@ const currentSection = () => {
 			item.classList.add('active-section-mobile')
 		}
 	})
+}
+
+const contactNavSectionPage = () => {
+	const contact = document.querySelector('.contact-desktop')
+	document.querySelector('.active-section').classList.remove('active-section')
+	contact.classList.add('active-section')
 }
 
 document.addEventListener('DOMContentLoaded', main)
