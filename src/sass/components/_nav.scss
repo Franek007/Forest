@@ -9,8 +9,8 @@
 	width: 50px;
 }
 
-.burger-menu-special-animation:before,
-.burger-menu-special-animation:after,
+.burger-menu-special-animation::before,
+.burger-menu-special-animation::after,
 .burger-menu-special-animation div {
 	display: block;
 	margin: 7px 0;
@@ -20,14 +20,13 @@
 	transition: 0.5s;
 	content: '';
 }
-.burger-menu-special-animation:hover:before {
+
+.burger-menu-special-animation--active::before {
 	transform: translateY(12px) rotate(135deg);
 }
-.burger-menu-special-animation:hover:after {
+
+.burger-menu-special-animation--active::after {
 	transform: translateY(-12px) rotate(-135deg);
-}
-.burger-menu-special-animation:hover div {
-	transform: scale(0);
 }
 
 .nav {

@@ -38,37 +38,26 @@ const prepareDOMEvents = () => {
 }
 
 const handleNav = () => {
+	const navDiv = burgerBtn.querySelector('div')
 	navSidebar.classList.toggle('nav__sidebar--active')
 	navNavSidebarItemParent.classList.toggle('nav__sidebar-items-active')
 	burgerBtn.style.zIndex = '1000'
 
+	console.log(burgerBtn)
+	if (navSidebar.classList.contains('nav__sidebar--active')) {
+		navDiv.style.transform = 'scale(0)'
+		burgerBtn.classList.add('burger-menu-special-animation--active')
+	} else {
+		burgerBtn.classList.remove('burger-menu-special-animation--active')
+		navDiv.style.transform = 'scale(1)'
+	}
+
 	allNavSidebarItems.forEach(item => {
 		item.addEventListener('click', () => {
+			burgerBtn.classList.remove('burger-menu-special-animation--active')
+			navDiv.style.transform = 'scale(1)'
 			navSidebar.classList.remove('nav__sidebar--active')
 		})
-	})
-}
-
-const handleNavItemsAnimation = () => {
-	let delayTime = 0
-	navBtnBars.classList.remove('black-bars-color')
-
-	allNavItems.forEach(item => {
-		item.classList.toggle('nav-items-animation')
-		item.style.animationDelay = '.' + delayTime + 's'
-		delayTime++
-	})
-}
-
-const handleBurgerBtnColor = () => {
-	const currentSection = window.scrollY
-
-	allSections.forEach(section => {
-		if (section.classList.contains('white-section') && section.offsetTop <= currentSection + 60) {
-			burgerBtnBars.classList.add('black-bars-color')
-		} else if (!section.classList.contains('white-section') && section.offsetTop <= currentSection + 60) {
-			burgerBtnBars.classList.remove('black-bars-color')
-		}
 	})
 }
 
